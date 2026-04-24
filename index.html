@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nowe wiadomości</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* MAIN CONTAINER */
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+
+  width: 90%;
+  max-width: 420px;
+  margin: auto;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* TEXT */
+h1 {
+  color: #ff3b6b;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.msg {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+p {
+  font-size: 15px;
+}
+
+/* BUTTON */
+.btn {
+  display: block;
+  background: #ff3b6b;
+  color: white;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+/* TIMER */
+.timer {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.small {
+  font-size: 12px;
+  color: gray;
+  margin-top: 10px;
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .box {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .msg {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Masz 3 nowe wiadomości 😏</h1>
+
+<div class="msg">💬 Anna (online): Hej, chcesz zobaczyć moje filmy?😉</div>
+<div class="msg">💬 Kasia (online): Hejka, czekam na Ciebie ❤️</div>
+<div class="msg">💬 Natalia (online): Zobacz moje zdjęcia 😊</div>
+
+<p><b>3 osoby czekają teraz na odpowiedź</b></p>
+
+<div class="timer" id="timer">Dostęp wygasa za: 15 sekund</div>
+
+<a class="btn" href="https://safeoffers.pro/a/OY2GvFOyxhr2Nm">
+👉 Napisz do nich
+</a>
+
+<div class="small">Tylko dla prawdziwych mężczyzn</div>
+
+</div>
+
+<script>
+let time = 15;
+let timer = document.getElementById("timer");
+
+setInterval(() => {
+  time--;
+  if(time > 0){
+    timer.innerHTML = "Dostęp wygasa za: " + time + " sekund";
+  } else {
+    timer.innerHTML = "Ostatnia szansa!";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
